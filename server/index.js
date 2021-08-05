@@ -16,12 +16,20 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(routes)
 
+
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static(__dirname + '/dist/'))
 
-    app.get(/.*/, (_, res)=> res.sendFile(__dirname + '/dist/index.html' ))
-}
 
+    app.get('*', function (_, res) {
+        const index = path.join(__dirname, 'dist', 'index.html');
+        res.sendFile(index);
+      });
+
+
+
+    // app.get(/.*/, (_, res)=> res.sendFile(__dirname + '/dist/index.html' ))
+}
 
 
 mongoose.connect(
