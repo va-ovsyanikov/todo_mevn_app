@@ -16,11 +16,11 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(routes)
 
-// if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV === 'production'){
     app.use(express.static(__dirname + '/dist/'))
 
-    app.get(/.*/, (req, res)=> res.sendFile(__dirname + '/dist/index.html' ))
-// }
+    app.get(/.*/, (_, res)=> res.sendFile(__dirname + '/dist/index.html' ))
+}
 
 
 
