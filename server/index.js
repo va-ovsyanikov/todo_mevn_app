@@ -10,6 +10,8 @@ const routes = require('./routers/routes')
 
 const cors = require('cors')
 
+const path = require ('path')
+
 
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
