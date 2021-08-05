@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="input-field col s12">
-      <button class="waves-effect waves-light btn" @click="onSubmit">
+      <button class="waves-effect waves-light btn" @click="onSubmit" >
         <i class="large material-icons">border_color</i>
       </button>
       <input
@@ -9,6 +9,7 @@
         type="text"
         v-model="todoValue"
         class="validate"
+        @keyup.enter="onSubmit" 
       />
       <label for="icon_prefix">Задача</label>
     </div>
