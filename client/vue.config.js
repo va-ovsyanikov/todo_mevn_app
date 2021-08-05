@@ -6,7 +6,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/': {
-                target:'http://localhost:3000/'
+                target:'https://todo-mevn-app.herokuapp.com/'
             }
         }
     }
